@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-15 16:05:13
+ * @LastEditTime: 2023-03-22 09:25:40
  * @Description: lcl
  */
 const { defineConfig } = require('@vue/cli-service');
@@ -19,14 +19,13 @@ const resolve = dir => path.join(__dirname, dir);
 let localhost = '';
 try {
   const network = os.networkInterfaces();
-  localhost = network[Object.keys(network)[0]][1].address;
+  localhost = network[Object.keys(network)[0]][3].address;
 } catch (e) {
   localhost = 'localhost';
 }
 
 module.exports = defineConfig({
   transpileDependencies: true,
-
   devServer: {
     open: true,
     host: localhost,
@@ -41,16 +40,36 @@ module.exports = defineConfig({
     },
   },
 
+  chainWebpack: config => {
+    config.module
+      .rule('svg')
+      .exclude.add(resolve('src/assets/image/icons/svgs')) //注意svg的存储地址
+      .end();
+    config.module
+      .rule('icons')
+      .test(/\.svg$/)
+      .include.add(resolve('src/assets/image/icons/svgs')) //注意svg的存储地址
+      .end()
+      .use('svg-sprite-loader')
+      .loader('svg-sprite-loader')
+      .options({
+        symbolId: 'icon-[name]',
+      })
+      .end();
+  },
+
   // 2. 生产环境不需要source-map文件
   productionSourceMap: env ? false : true,
   configureWebpack: config => {
+    console.log('-');
     config.resolve = {
-      extensions: ['.mjs', '.js', '.jsx', '.vue', '.json', '.wasm', 'css', 'less', 'sass'],
+      extensions: ['.mjs', '.js', '.jsx', '.vue', '.json', '.wasm', '.css', '.less', '.sass'],
       alias: {
         '@': resolve('src'),
       },
     };
     let plugins = [];
+
     if (env) {
       plugins = [
         //1.开启js、cs代码压缩  @5.0.1版本：最新版有问题
@@ -83,6 +102,7 @@ module.exports = defineConfig({
       config.optimization = {
         // HashedModuleIdsPlugin--》加快打包速度
         moduleIds: 'deterministic',
+        chunkIds: 'deterministic',
         // 4.提取公用文件防止打包重复:不支持配饰fileName
         // runtime相关的代码指的是在运行环境中修改哪里的代码就直接加载哪里
         // runtimeChunk: 'single',
@@ -122,6 +142,9 @@ module.exports = defineConfig({
         },
       };
     }
-    return { plugins };
+
+    if (plugins.length > 0) {
+      return { plugins };
+    }
   },
 });

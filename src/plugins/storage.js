@@ -3,11 +3,12 @@
  * @Version: 2.0
  * @Date: 2022-07-19 15:24:25
  * @LastEditors: lcl
- * @LastEditTime: 2022-08-09 09:11:21
+ * @LastEditTime: 2023-03-15 23:09:31
  * @Description: lcl
  */
-import config from '@/config/env-api.js';
-
+const config = {
+  nameSpace: 'formwork',
+};
 export default {
   // 得到config.nameSpace对象
   getStorage() {

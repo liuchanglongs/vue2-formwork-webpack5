@@ -77,6 +77,9 @@ import {
   Message,
   Notification,
   Empty,
+  Skeleton,
+  SkeletonItem,
+  InfiniteScroll,
 } from 'element-ui';
 
 export default {
@@ -155,7 +158,10 @@ export default {
     Vue.use(PageHeader);
     Vue.use(CascaderPanel);
     Vue.use(Empty);
+    Vue.use(Skeleton);
+    Vue.use(SkeletonItem);
     Vue.use(Loading.directive);
+    Vue.use(InfiniteScroll);
 
     Vue.prototype.$loading = Loading.service;
     Vue.prototype.$msgbox = MessageBox;

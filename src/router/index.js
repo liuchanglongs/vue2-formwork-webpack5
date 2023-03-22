@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-15 13:48:52
+ * @LastEditTime: 2023-03-21 15:37:38
  * @Description: lcl
  */
 import Vue from 'vue';
@@ -15,12 +15,44 @@ VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err);
 };
 
-const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: HomeView,
-  // },
+export const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: () => import(/* webpackChunkName: "home" */ '@/components/layout/index.vue'),
+    redirect: '/svg-to-icon',
+    children: [
+      {
+        path: '/svg-to-icon',
+        name: 'svg-to-icon',
+        component: () =>
+          import(/* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'),
+        meta: {
+          title: 'svg->精灵图->icon',
+        },
+      },
+      {
+        path: '/picture-optimization',
+        name: 'picture-optimization',
+        component: () =>
+          import(
+            /* webpackChunkName: "picture-optimization" */ '@/views/pictureOptimization/index.vue'
+          ),
+        meta: {
+          title: 'picture-optimization',
+        },
+      },
+      {
+        path: '/long-list',
+        name: 'long-list',
+        component: () => import(/* webpackChunkName: "long-list" */ '@/views/longList/index.vue'),
+        meta: {
+          title: 'long-list',
+        },
+      },
+    ],
+  },
+
   // {
   //   path: '/about',
   //   name: 'about',

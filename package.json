@@ -5,7 +5,9 @@
   "scripts": {
     "serve": "vue-cli-service serve --mode dev ",
     "build": "vue-cli-service build --mode product",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --fix",
+    "devInspect": "vue-cli-service inspect --mode dev >> webpack.config.development.js",
+    "proInspect": "vue-cli-service inspect --mode product >> webpack.config.production.js"
   },
   "dependencies": {
     "axios": "^1.3.4",
@@ -14,8 +16,10 @@
     "element-ui": "^2.15.13",
     "lodash": "^4.17.21",
     "nprogress": "^0.2.0",
+    "svg-sprite-loader": "^6.0.11",
     "vue": "^2.6.14",
     "vue-router": "^3.5.1",
+    "vue-virtual-scroller": "^1.1.2",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
@@ -34,6 +38,9 @@
     "eslint-plugin-vue": "^8.0.3",
     "less": "^4.0.0",
     "less-loader": "^8.0.0",
+    "postcss-preset-env": "^8.0.1",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-pxtorem": "^6.0.0",
     "prettier": "^2.8.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.14",

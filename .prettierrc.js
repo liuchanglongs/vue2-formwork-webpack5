@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:03:19
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-15 11:14:17
+ * @LastEditTime: 2023-03-20 15:40:05
  * @Description: lcl
  */
 module.exports = {
@@ -64,7 +64,7 @@ module.exports = {
   // htmlWhitespaceSensitivity: 'ignore', //对HTML全局空白不敏感
 
   vueIndentScriptAndStyle: false, //不对vue中的script及style标签缩进
-  endOfLine: 'lf', //结束行形式
+  endOfLine: 'auto', //结束行形式
   embeddedLanguageFormatting: 'auto', //对引用代码进行格式化
   'prettier.proseWrap': 'preserve', // 是否要换行
 
