@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-22 09:25:40
+ * @LastEditTime: 2023-03-22 16:52:05
  * @Description: lcl
  */
 const { defineConfig } = require('@vue/cli-service');
@@ -61,11 +61,11 @@ module.exports = defineConfig({
   // 2. 生产环境不需要source-map文件
   productionSourceMap: env ? false : true,
   configureWebpack: config => {
-    console.log('-');
     config.resolve = {
       extensions: ['.mjs', '.js', '.jsx', '.vue', '.json', '.wasm', '.css', '.less', '.sass'],
       alias: {
         '@': resolve('src'),
+        vue: 'vue/dist/vue.esm.js',
       },
     };
     let plugins = [];

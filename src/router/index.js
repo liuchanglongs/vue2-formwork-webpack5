@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-21 15:37:38
+ * @LastEditTime: 2023-03-22 15:24:19
  * @Description: lcl
  */
 import Vue from 'vue';
@@ -48,6 +48,15 @@ export const routes = [
         component: () => import(/* webpackChunkName: "long-list" */ '@/views/longList/index.vue'),
         meta: {
           title: 'long-list',
+        },
+      },
+      {
+        path: '/scroll-table-list',
+        name: 'scroll-table-list',
+        component: () =>
+          import(/* webpackChunkName: "scroll-table-list" */ '@/views/scrollTableList/index.vue'),
+        meta: {
+          title: 'scroll-table-list',
         },
       },
     ],

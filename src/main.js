@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-22 09:25:01
+ * @LastEditTime: 2023-03-22 20:51:49
  * @Description: lcl
  */
 import Vue from 'vue';
@@ -21,7 +21,7 @@ import VueVirtualScroller from 'vue-virtual-scroller'; // 引入它
 
 // 引入自己的ui布局规则
 import locale from '@/assets/locale/cn';
-import globalDirectives from '@/directives/index';
+import '@/directives/index';
 import '@/assets/image/icons/index.js';
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'; // 引入它的 css
 import '@/plugins/pxToRem';
@@ -39,7 +39,6 @@ Vue.use(ElementUI, {
 });
 Vue.use(commonComponents);
 Vue.use(VueVirtualScroller);
-globalDirectives(Vue);
 
 new Vue({
   router,
