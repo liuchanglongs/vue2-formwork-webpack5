@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-22 16:52:05
+ * @LastEditTime: 2023-04-15 18:51:15
  * @Description: lcl
  */
 const { defineConfig } = require('@vue/cli-service');
@@ -16,6 +16,7 @@ const os = require('os');
 const env = process.env.NODE_ENV === 'production' ? true : false;
 const path = require('path');
 const resolve = dir => path.join(__dirname, dir);
+const port = 9527;
 let localhost = '';
 try {
   const network = os.networkInterfaces();
@@ -28,7 +29,9 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     open: true,
+    // webpack5 :自动open，拿不到地址
     host: localhost,
+    port,
     proxy: {
       '/api': {
         target: 'http://192.168.170.61:2020',

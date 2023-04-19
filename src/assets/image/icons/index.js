@@ -1,10 +1,18 @@
+/*
+ * @Autor: lcl
+ * @Version: 2.0
+ * @Date: 2023-03-22 10:03:30
+ * @LastEditors: lcl
+ * @LastEditTime: 2023-04-15 19:01:26
+ * @Description: lcl
+ */
 import Vue from 'vue';
 import SvgIcon from '@/components/SvgIcon/index.vue'; //svg组件
 // 全局注册组件;
 Vue.component('svg-icon', SvgIcon);
 // 这是一个批量导入 .svg 文件的写法。
 const requireAll = requireContext => {
-  console.log(requireContext.keys().forEach(requireContext));
+  // console.log(requireContext.keys().forEach(requireContext));
   requireContext.keys().forEach(requireContext);
 };
 // import svg

@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-22 20:51:49
+ * @LastEditTime: 2023-04-18 14:02:52
  * @Description: lcl
  */
 import Vue from 'vue';
@@ -24,10 +24,11 @@ import locale from '@/assets/locale/cn';
 import '@/directives/index';
 import '@/assets/image/icons/index.js';
 import 'vue-virtual-scroller/dist/vue-virtual-scroller.css'; // 引入它的 css
-import '@/plugins/pxToRem';
+// import '@/plugins/pxToRem';
 
 import 'nprogress/nprogress.css';
 import '@/assets/style/index.less';
+import './permission';
 
 Vue.config.productionTip = false;
 Vue.prototype.$storage = storage;

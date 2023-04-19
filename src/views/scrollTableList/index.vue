@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-22 15:19:00
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-23 00:12:55
+ * @LastEditTime: 2023-04-18 15:44:12
  * @Description: lcl
 -->
 <template>
@@ -25,11 +25,14 @@
 </template>
 
 <script>
+import longTableList from '@/directives/scrollTableList';
 export default {
+  mixins: [longTableList],
   data() {
     return {
       tableData: [],
       itemheight: 49,
+      trim: null,
     };
   },
   mounted() {
@@ -45,6 +48,9 @@ export default {
         this.tableData = _arr;
       }
     }, 100);
+  },
+  beforeDestroy() {
+    if (this.trim) clearTimeout(this.trim);
   },
 };
 </script>

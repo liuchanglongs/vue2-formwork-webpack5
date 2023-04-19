@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-22 21:13:38
+ * @LastEditTime: 2023-04-19 00:07:22
  * @Description: lcl
  */
 module.exports = {
@@ -28,7 +28,10 @@ module.exports = {
     'no-undef': 0,
     'linebreak-style': [0, 'error', 'windows'],
     'no-debugger': 0,
+    // 'no-multiple-template-root': 0,
+    // 'no-v-for-template-key': 1,
     // 'vue/no-reserved-keys': 0,
+    // 'valid-template-root': 1,
     // 'quote-props': 0,
   },
 };

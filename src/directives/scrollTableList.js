@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-22 20:48:18
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-23 00:10:45
+ * @LastEditTime: 2023-04-18 15:50:12
  * @Description: lcl
  */
 import Vue from 'vue';
@@ -51,8 +51,12 @@ import Vue from 'vue';
  * 滚动区域的高度=clientHeight+ 上下padding撑开（通过top、over算出）
  * 页面dom渲染越多越卡
  **/
+
+// const trim
+
 Vue.directive('scrollTableList', {
   bind(el, binding, vnode) {
+    console.log('-------->');
     // table组件的this
     const _this = vnode.context;
     const target = el.querySelector('.el-table__body-wrapper');
@@ -66,15 +70,21 @@ Vue.directive('scrollTableList', {
     //   console.log(itemHeight.querySelector('tr')); // null
     // });
     target.addEventListener('scroll', () => {
-      _this.scrollTop = target.scrollTop;
-      _this.tableHeight = target.clientHeight;
-      // 注意：这个itemHeight是数据得到后在渲染的.只能这里面获取得到
-      const itemHeight = el.querySelector('.el-table__row');
-      if (itemHeight) {
-        _this.itemHeight = itemHeight.clientHeight;
+      if (_this.trim) {
+        clearTimeout(_this.trim);
       }
-      scrollBg.style.paddingTop = _this.padding[0] + 'px';
-      scrollBg.style.paddingBottom = _this.padding[1] + 'px';
+      _this.trim = setTimeout(() => {
+        console.log(_this.trim);
+        _this.scrollTop = target.scrollTop;
+        _this.tableHeight = target.clientHeight;
+        // 注意：这个itemHeight是数据得到后在渲染的.只能这里面获取得到
+        const itemHeight = el.querySelector('.el-table__row');
+        if (itemHeight) {
+          _this.itemHeight = itemHeight.clientHeight;
+        }
+        scrollBg.style.paddingTop = _this.padding[0] + 'px';
+        scrollBg.style.paddingBottom = _this.padding[1] + 'px';
+      }, 100);
     });
 
     //解决屏幕放大缩小 itemHeight为nul的问题
@@ -86,7 +96,9 @@ Vue.directive('scrollTableList', {
   },
 });
 
-Vue.mixin({
+// 全局混入跟vue-virtual-scroller有冲突
+// Vue.mixin();
+const longTableList = {
   data() {
     return {
       scrollTop: 0,
@@ -96,6 +108,7 @@ Vue.mixin({
   },
   watch: {
     over(old, news) {
+      console.log('-----');
       // 初始化滚动背景高度：利用tableData改变->total->over
       const scrollBg = document.querySelector('.el-table__body');
       if (scrollBg.clientHeight == 0) {
@@ -129,52 +142,5 @@ Vue.mixin({
       return [top, bottom];
     },
   },
-});
-
-// Vue.directive("myscroll", {
-//   //
-//   bind(el, bind, vnode) {
-//     const self = vnode.context;
-//     let target = el.querySelector(".el-table__body-wrapper");
-
-//     target.addEventListener("scroll", () => {
-//       //检测触底
-//       /*if (target.scrollTop + target.clientHeight >= target.scrollHeight) {
-//         if (self.over >= self.dataList.length) {
-//           return;
-//         }
-//         self.over += 15;
-//       }*/
-//       //设置table
-//       setTimeout(() => {
-//         const _table = target.querySelector("table");
-//         _table.style.paddingTop = self.padding[0] + "px";
-//         _table.style.paddingBottom = self.padding[1] + 50 + "px";
-//         self.tableHeight = target.clientHeight
-//         self.scrollTop = target.scrollTop
-//       }, 200)
-//     })
-//   }
-// })
-//mounted
-// Vue.mixin({
-//   data() {
-//     return {
-//       scrollTop: 0,
-//       tableHeight: 300
-//     }
-//   },
-//   computed: {
-//     start() {
-//       return Math.max(this.scrollTop / 40 - 5, 0);
-//     },
-//     over() {
-//       return Math.min((this.scrollTop + this.tableHeight) / 40 + 5, this.dataList.length)
-//     },
-//     padding() {
-//       let paddingBottom = (this.dataList - this.over) * 40;
-//       let paddingTop = this.start * 40;
-//       return [paddingTop, paddingBottom]
-//     }
-//   }
-// })
+};
+export default longTableList;

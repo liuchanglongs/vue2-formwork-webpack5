@@ -3,11 +3,11 @@
  * @Version: 2.0
  * @Date: 2022-07-19 15:24:25
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-15 23:09:31
+ * @LastEditTime: 2023-04-18 11:34:16
  * @Description: lcl
  */
 const config = {
-  nameSpace: 'formwork',
+  nameSpace: 'vue2-formwork',
 };
 export default {
   // 得到config.nameSpace对象

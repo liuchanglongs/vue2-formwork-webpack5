@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-17 19:16:16
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-17 21:41:23
+ * @LastEditTime: 2023-04-18 16:59:25
  * @Description: lcl
 -->
 <template>
@@ -32,7 +32,7 @@ export default {
       if (this.className) {
         return 'svg-icon ' + this.className;
       } else {
-        return 'svg-icon';
+        return 'svg-icon ' + this.iconClass;
       }
     },
   },
