@@ -10,7 +10,7 @@
     "devInspect": "vue-cli-service inspect --mode dev >> webpack.config.development.js",
     "proInspect": "vue-cli-service inspect --mode product >> webpack.config.production.js",
     "prepare": "husky install",
-    "commit":"cz"
+    "commit": "cz"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.1",
