@@ -9,7 +9,8 @@
     "prettier": "prettier --write .",
     "devInspect": "vue-cli-service inspect --mode dev >> webpack.config.development.js",
     "proInspect": "vue-cli-service inspect --mode product >> webpack.config.production.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit":"cz"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.1",
@@ -52,5 +53,10 @@
     "uglifyjs-webpack-plugin": "^2.2.0",
     "vue-template-compiler": "^2.6.14",
     "webpack-bundle-analyzer": "^4.8.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

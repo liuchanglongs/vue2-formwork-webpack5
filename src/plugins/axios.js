@@ -34,7 +34,7 @@ axios.interceptors.request.use(
     const meta = config.meta || {};
     const isToken = meta.isToken === false;
     if (config.url.startsWith('/api')) {
-      config.headers['Authorization'] = `Basic c3dvcmQ6c3dvcmRfc2VjcmV0`;
+      config.headers['Authorization'] = 'Basic c3dvcmQ6c3dvcmRfc2VjcmV0';
       //让每个请求携带token
       if (storage.getItem('access_token') && !isToken) {
         config.headers['Blade-Auth'] =
