@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-04-19 11:12:12
+ * @LastEditTime: 2023-04-19 11:13:45
  * @Description: lcl
 -->
 <template>
@@ -22,7 +22,6 @@ export default {
       return this.$route.params.id || this.$route.name;
     },
   },
-  mounted() {},
 };
 </script>
 
