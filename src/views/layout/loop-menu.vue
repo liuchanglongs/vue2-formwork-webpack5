@@ -11,7 +11,11 @@
     <div v-for="item in asideMenu" :key="item.meta.title">
       <!-- 一级菜单 -->
       <!-- @click="operation('close', item)" -->
-      <el-menu-item v-if="!item.children" :index="item.path" @click="open(item.path)">
+      <el-menu-item
+        v-if="!item.children"
+        :index="item.path"
+        @click="open(item.path)"
+      >
         <i :class="item.meta.icon" v-if="item.meta.icon"></i>
         <span slot="title" class="font-r">{{ item.meta.title }}</span>
       </el-menu-item>

@@ -53,7 +53,8 @@ export const routes = [
     path: '/login',
     hidden: true,
     name: 'login',
-    component: () => import(/* webpackChunkName: "login" */ '@/views/login/index.vue'),
+    component: () =>
+      import(/* webpackChunkName: "login" */ '@/views/login/index.vue'),
   },
   // 自定义无感刷新页
   {
@@ -90,7 +91,9 @@ export const commonRoutes = {
       path: '/svg-to-icon',
       name: 'svg-to-icon',
       component: () =>
-        import(/* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'),
+        import(
+          /* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'
+        ),
       meta: {
         title: 'svg->精灵图->icon',
         icon: 'el-icon-camera',
@@ -112,7 +115,9 @@ export const asyncRoutes = {
       path: '/svg-to-icon',
       name: 'svg-to-icon',
       component: () =>
-        import(/* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'),
+        import(
+          /* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'
+        ),
       meta: {
         title: 'svg->精灵图->icon',
         icon: 'el-icon-camera',
@@ -135,7 +140,8 @@ export const asyncRoutes = {
     {
       path: '/longList',
       name: 'longList',
-      component: () => import(/* webpackChunkName: "longList" */ '@/views/longList/index.vue'),
+      component: () =>
+        import(/* webpackChunkName: "longList" */ '@/views/longList/index.vue'),
       meta: {
         title: 'longList',
         icon: 'el-icon-camera',
@@ -146,7 +152,9 @@ export const asyncRoutes = {
       path: '/scrollTableList',
       name: 'scrollTableList',
       component: () =>
-        import(/* webpackChunkName: "scrollTableList" */ '@/views/scrollTableList/index.vue'),
+        import(
+          /* webpackChunkName: "scrollTableList" */ '@/views/scrollTableList/index.vue'
+        ),
       meta: {
         title: 'scrollTableList',
         icon: 'el-icon-camera',
@@ -157,7 +165,9 @@ export const asyncRoutes = {
       path: '/reuseRouter/:id?',
       name: 'reuse-router',
       component: () =>
-        import(/* webpackChunkName: "reuseRouter" */ '@/views/reuseRouter/index.vue'),
+        import(
+          /* webpackChunkName: "reuseRouter" */ '@/views/reuseRouter/index.vue'
+        ),
       meta: {
         title: 'reuseRouter',
         icon: 'el-icon-camera',
@@ -167,7 +177,10 @@ export const asyncRoutes = {
     {
       path: '/recursive',
       name: 'recursive',
-      component: () => import(/* webpackChunkName: "recursive" */ '@/views/recursive/index.vue'),
+      component: () =>
+        import(
+          /* webpackChunkName: "recursive" */ '@/views/recursive/index.vue'
+        ),
       meta: {
         title: 'recursiveComponent',
         icon: 'el-icon-camera',
@@ -177,7 +190,9 @@ export const asyncRoutes = {
           path: '/recursive/2-1',
           name: 'recursive-2-1',
           component: () =>
-            import(/* webpackChunkName: "recursive-2-1" */ '@/views/recursive/two-1.vue'),
+            import(
+              /* webpackChunkName: "recursive-2-1" */ '@/views/recursive/two-1.vue'
+            ),
           meta: {
             title: 'recursive-two-2-1',
           },
@@ -187,7 +202,9 @@ export const asyncRoutes = {
           path: '/recursive/2-2',
           name: 'recursive-2-2',
           component: () =>
-            import(/* webpackChunkName: "recursive-2-2" */ '@/views/recursive/two-2.vue'),
+            import(
+              /* webpackChunkName: "recursive-2-2" */ '@/views/recursive/two-2.vue'
+            ),
           meta: {
             title: 'recursive-2-2',
           },
@@ -205,7 +222,9 @@ export const asyncRoutes = {
               path: '/recursive/3-1',
               name: 'recursive-3-1',
               component: () =>
-                import(/* webpackChunkName: "recursive-3-1" */ '@/views/recursive/three-1.vue'),
+                import(
+                  /* webpackChunkName: "recursive-3-1" */ '@/views/recursive/three-1.vue'
+                ),
               meta: {
                 title: 'recursive-3-1',
               },

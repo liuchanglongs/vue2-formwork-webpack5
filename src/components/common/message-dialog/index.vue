@@ -23,8 +23,12 @@
       </div>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClose" size="small" class="cancel">取消</el-button>
-          <el-button type="primary" size="small" @click="handleSubmit">确定</el-button>
+          <el-button @click="handleClose" size="small" class="cancel"
+            >取消</el-button
+          >
+          <el-button type="primary" size="small" @click="handleSubmit"
+            >确定</el-button
+          >
         </span>
       </template>
     </el-dialog>

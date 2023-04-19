@@ -50,10 +50,16 @@
       ></queryForm>
       <template #footer>
         <span class="dialog-footer">
-          <el-button @click="handleClose" size="small" class="cancel">取消</el-button>
-          <el-button type="primary" size="small" @click="handleSubTab" v-if="isTabs">{{
-            confirmText
-          }}</el-button>
+          <el-button @click="handleClose" size="small" class="cancel"
+            >取消</el-button
+          >
+          <el-button
+            type="primary"
+            size="small"
+            @click="handleSubTab"
+            v-if="isTabs"
+            >{{ confirmText }}</el-button
+          >
           <el-button type="primary" size="small" @click="handleSubmit" v-else>{{
             confirmText
           }}</el-button>
@@ -135,7 +141,10 @@ export default {
         data = this.currentData[1];
         this.$refs.email.$refs.queryForm.validate(val => {
           if (val) {
-            this.$emit('handleSubTab', { type: this.title, data: { ...data } });
+            this.$emit('handleSubTab', {
+              type: this.title,
+              data: { ...data },
+            });
           }
         });
       } else {
@@ -143,7 +152,10 @@ export default {
         data = this.currentData[0];
         this.$refs.phone.$refs.queryForm.validate(val => {
           if (val) {
-            this.$emit('handleSubTab', { type: this.title, data: { ...data } });
+            this.$emit('handleSubTab', {
+              type: this.title,
+              data: { ...data },
+            });
           }
         });
       }
@@ -180,11 +192,17 @@ export default {
           if (this.title === '修改密码') {
             this.$emit('handleSubmit', {
               type: this.title,
-              data: { confirmPsd: this.currentData.confirmPsd, newPsd: this.currentData.newPsd },
+              data: {
+                confirmPsd: this.currentData.confirmPsd,
+                newPsd: this.currentData.newPsd,
+              },
             });
             return;
           }
-          this.$emit('handleSubmit', { type: this.title, data: { ...this.currentData } });
+          this.$emit('handleSubmit', {
+            type: this.title,
+            data: { ...this.currentData },
+          });
         }
       });
     },

@@ -37,10 +37,17 @@
               >
             </el-form-item>
             <!-- 修改链接 -->
-            <span v-if="item.isLink" class="link" @click="clickLink(item.linkTitle)">{{
-              item.linkTitle
-            }}</span>
-            <el-form-item v-if="item.type === 'select'" :prop="item.prop" :label="item.label">
+            <span
+              v-if="item.isLink"
+              class="link"
+              @click="clickLink(item.linkTitle)"
+              >{{ item.linkTitle }}</span
+            >
+            <el-form-item
+              v-if="item.type === 'select'"
+              :prop="item.prop"
+              :label="item.label"
+            >
               <el-select
                 v-model="formData[item.prop]"
                 :multiple="item.multiple || false"
@@ -58,7 +65,11 @@
               </el-select>
             </el-form-item>
 
-            <el-form-item v-if="item.type === 'slot'" :prop="item.prop" :label="item.label">
+            <el-form-item
+              v-if="item.type === 'slot'"
+              :prop="item.prop"
+              :label="item.label"
+            >
               <slot :name="item.slotName" :item="item"></slot>
             </el-form-item>
           </el-col>

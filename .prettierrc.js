@@ -3,19 +3,19 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:03:19
  * @LastEditors: lcl
- * @LastEditTime: 2023-03-20 15:40:05
+ * @LastEditTime: 2023-04-19 13:49:53
  * @Description: lcl
  */
 module.exports = {
-  // 一行最多 100 字符
-  printWidth: 100,
+  // 一行最多 80 字符
+  printWidth: 80,
   // 关闭 tab 缩进
   useTabs: false,
   // 使用 2个tab 缩进
   tabWidth: 2,
   // 行尾需要有分号
   semi: true,
-  // 使用单引号
+  // 使用双引号
   singleQuote: true,
   // 对象key是否使用引号 <as-needed|consistent|preserve>
   // as-needed 仅在需要的时候使用

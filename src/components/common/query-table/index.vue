@@ -3,7 +3,10 @@
     <div class="content-box">
       <el-row>
         <el-col :span="4" v-if="isTbleTreeAside" class="table-aside">
-          <slot v-if="tbleTreeAsideSoltName" :name="tbleTreeAsideSoltName"></slot>
+          <slot
+            v-if="tbleTreeAsideSoltName"
+            :name="tbleTreeAsideSoltName"
+          ></slot>
         </el-col>
         <el-col :span="isTbleTreeAside ? 20 : 24">
           <div v-if="headerSlotName" class="header-button buttons">
@@ -104,7 +107,10 @@ export default {
     },
     treeProps: {
       type: Object,
-      default: () => ({ children: 'children', hasChildren: 'hasChildren' }),
+      default: () => ({
+        children: 'children',
+        hasChildren: 'hasChildren',
+      }),
     },
     reserveSelection: {
       type: Boolean,
@@ -164,7 +170,9 @@ export default {
     isShowPagination() {
       if (!this.isHandleSizeChange) {
         console.log('---');
-        return Math.ceil(this.paginationData.total / this.paginationData.pageSize);
+        return Math.ceil(
+          this.paginationData.total / this.paginationData.pageSize
+        );
       } else {
         console.log('++');
         return 2;
@@ -175,7 +183,10 @@ export default {
     //  点击分页
     handleCurrentChange(val) {
       this.paginationData.pageNum = val;
-      this.$emit('submitForm', { page: val, size: this.paginationData.pageSize });
+      this.$emit('submitForm', {
+        page: val,
+        size: this.paginationData.pageSize,
+      });
     },
     // 选择每页显示条数
     handleSizeChange(val) {
@@ -183,13 +194,19 @@ export default {
       this.paginationData.pageSize = val;
       // 防止页数*pageSize>total，页面显示空白
       if (this.paginationData.pageNum != 1) {
-        const numMsg = this.paginationData.pageSize * (this.paginationData.pageNum - 1);
+        const numMsg =
+          this.paginationData.pageSize * (this.paginationData.pageNum - 1);
         if (this.paginationData.total <= numMsg) {
-          const pageNum = Math.ceil(this.paginationData.total / this.paginationData.pageSize);
+          const pageNum = Math.ceil(
+            this.paginationData.total / this.paginationData.pageSize
+          );
           this.paginationData.pageNum = pageNum;
         }
       }
-      this.$emit('submitForm', { page: this.paginationData.pageNum, size: val });
+      this.$emit('submitForm', {
+        page: this.paginationData.pageNum,
+        size: val,
+      });
     },
     // table的多选事件
     selectionChange(val) {

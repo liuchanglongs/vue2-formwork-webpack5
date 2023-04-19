@@ -37,7 +37,8 @@ axios.interceptors.request.use(
       config.headers['Authorization'] = `Basic c3dvcmQ6c3dvcmRfc2VjcmV0`;
       //让每个请求携带token
       if (storage.getItem('access_token') && !isToken) {
-        config.headers['Blade-Auth'] = 'bearer ' + storage.getItem('access_token');
+        config.headers['Blade-Auth'] =
+          'bearer ' + storage.getItem('access_token');
       }
     }
 

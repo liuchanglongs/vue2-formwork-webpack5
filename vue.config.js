@@ -65,7 +65,17 @@ module.exports = defineConfig({
   productionSourceMap: env ? false : true,
   configureWebpack: config => {
     config.resolve = {
-      extensions: ['.mjs', '.js', '.jsx', '.vue', '.json', '.wasm', '.css', '.less', '.sass'],
+      extensions: [
+        '.mjs',
+        '.js',
+        '.jsx',
+        '.vue',
+        '.json',
+        '.wasm',
+        '.css',
+        '.less',
+        '.sass',
+      ],
       alias: {
         '@': resolve('src'),
         vue: 'vue/dist/vue.esm.js',

@@ -8,7 +8,12 @@
 -->
 <template>
   <div class="content-header">
-    <el-page-header class="title" @back="gobackFn" :title="gobackText" v-if="goback">
+    <el-page-header
+      class="title"
+      @back="gobackFn"
+      :title="gobackText"
+      v-if="goback"
+    >
     </el-page-header>
     <div class="title" v-else>{{ titleText }}</div>
     <div class="header-right">

@@ -18,7 +18,8 @@ const notFound = {
   path: '*',
   hidden: true,
   name: '404',
-  component: () => import(/* webpackChunkName: "404" */ '@/views/404/index.vue'),
+  component: () =>
+    import(/* webpackChunkName: "404" */ '@/views/404/index.vue'),
 };
 
 router.beforeEach(async (to, from, next) => {
@@ -38,7 +39,9 @@ router.beforeEach(async (to, from, next) => {
            * 2. 组装路由
            * */
           const role = await store.dispatch('user/getUserMsg');
-          const routeArry = await store.dispatch('getRouter/configRouter', { role });
+          const routeArry = await store.dispatch('getRouter/configRouter', {
+            role,
+          });
           router.addRoute(routeArry);
           router.addRoute(notFound);
           console.log(router.getRoutes());

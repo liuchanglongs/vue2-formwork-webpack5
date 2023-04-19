@@ -9,22 +9,46 @@
       @selection-change="selectionChange"
     >
       <template slot-scope="{ size }" slot="menuLeft">
-        <el-button type="success" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="success"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >新增</el-button
         >
-        <el-button type="success" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="success"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >模板下载</el-button
         >
-        <el-button type="success" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="success"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >数据导入</el-button
         >
-        <el-button type="success" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="success"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >数据导出</el-button
         >
-        <el-button type="success" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="success"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >数据表设计</el-button
         >
-        <el-button type="danger" icon="el-icon-plus" :size="size" @click="handleAdd"
+        <el-button
+          type="danger"
+          icon="el-icon-plus"
+          :size="size"
+          @click="handleAdd"
           >删除</el-button
         >
       </template>

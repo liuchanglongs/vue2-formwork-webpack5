@@ -30,7 +30,10 @@
         </el-option>
       </el-select>
       <!-- <svg-icon icon-class="lock" class-name="lock" /> -->
-      <svg-icon :icon-class="isFullscreen ? 'exit-fullscreen' : 'fullscreen'" @click="click" />
+      <svg-icon
+        :icon-class="isFullscreen ? 'exit-fullscreen' : 'fullscreen'"
+        @click="click"
+      />
     </div>
   </div>
 </template>
