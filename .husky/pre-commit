@@ -1,4 +1,6 @@
 #!/usr/bin/env sh
-npm run lint
 . "$(dirname -- "$0")/_/husky.sh"
+
+npm run prettier
+npm run lint
 npx --no-install commitlint --edit "$1"
