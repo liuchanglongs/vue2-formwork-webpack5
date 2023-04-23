@@ -3,14 +3,13 @@
  * @Version: 2.0
  * @Date: 2023-04-18 22:35:31
  * @LastEditors: lcl
- * @LastEditTime: 2023-04-19 00:11:39
+ * @LastEditTime: 2023-04-20 14:04:35
  * @Description: lcl
 -->
 <template>
   <div>
     <div v-for="item in asideMenu" :key="item.meta.title">
       <!-- 一级菜单 -->
-      <!-- @click="operation('close', item)" -->
       <el-menu-item
         v-if="!item.children"
         :index="item.path"

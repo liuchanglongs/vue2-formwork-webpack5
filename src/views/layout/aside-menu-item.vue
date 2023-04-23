@@ -1,9 +1,10 @@
 <template>
   <div class="aside-menu">
-    <!-- @open="handleOpen"
-      @select="handleSelect" -->
-    <!-- :default-active="defaultActive" 
+    <!--
+      :default-active="defaultActive"
       :default-active="$route.path"
+      @open="handleOpen"
+      @select="handleSelect"
     -->
 
     <el-menu
@@ -20,7 +21,6 @@
 </template>
 
 <script>
-import { routes } from '@/router/index';
 import loopMenu from './loop-menu.vue';
 import { mapGetters } from 'vuex';
 export default {
@@ -91,112 +91,112 @@ export default {
     border: none;
   }
 
-  .el-menu-item {
-    // display: flex;
-    // justify-content: flex-start;
-    // align-items: center;
-    // width: 100%;
-    // height: 40px;
-    // margin-bottom: 18px;
-    // border-radius: 5px;
-    // pointer-events: auto;
-    // cursor: pointer;
+  // .el-menu-item {
+  // display: flex;
+  // justify-content: flex-start;
+  // align-items: center;
+  // width: 100%;
+  // height: 40px;
+  // margin-bottom: 18px;
+  // border-radius: 5px;
+  // pointer-events: auto;
+  // cursor: pointer;
 
-    // &.is-active {
-    //   background-color: #4faa3d;
+  // &.is-active {
+  //   background-color: #4faa3d;
 
-    //   span {
-    //     color: #ffffff;
-    //   }
-    // }
-
-    // &:hover {
-    //   background-color: #4faa3d;
-
-    //   span {
-    //     color: #ffffff;
-    //   }
-    // }
-
-    // span {
-    //   display: block;
-    //   color: #999999;
-    // }
-  }
-
-  // 图标设置
-  // .ico {
-  //   display: block;
-  //   margin-right: 12px;
-  //   width: 16px;
-  //   height: 16px;
+  //   span {
+  //     color: #ffffff;
+  //   }
   // }
 
-  // :deep(.sub-menu) {
-  //   margin-bottom: 18px;
+  // &:hover {
+  //   background-color: #4faa3d;
 
-  //   &.is-opened {
-  //     .el-submenu__title {
-  //       color: #ffffff;
-  //       background-color: #4faa3d;
-  //     }
-  //   }
-
-  //   li {
-  //     width: 148px !important;
-  //   }
-
-  //   .el-submenu__title {
-  //     display: flex;
-  //     justify-content: flex-start;
-  //     align-items: center;
-  //     height: 40px;
-  //     border-radius: 5px;
-  //     color: #999999;
-  //     cursor: pointer;
-  //   }
-
-  //   .el-submenu__title:hover,
-  //   .el-submenu__title.is-active {
+  //   span {
   //     color: #ffffff;
-  //     background-color: #4faa3d;
   //   }
+  // }
 
-  //   .el-submenu__icon-arrow {
-  //     display: none;
-  //   }
-
-  //   .el-menu-item-group {
-  //     .el-menu-item {
-  //       width: 148px;
-  //       margin-bottom: 5px;
-  //       padding: 0;
-  //       min-width: 0;
-  //       cursor: pointer;
-  //     }
-
-  //     .sub-item:hover,
-  //     .sub-item.is-active {
-  //       position: relative;
-  //       background-color: #fafafa;
-  //       cursor: pointer;
-
-  //       span {
-  //         color: #4faa3d;
-  //       }
-
-  //       &::after {
-  //         position: absolute;
-  //         top: 12px;
-  //         left: 172px;
-  //         content: '';
-  //         display: block;
-  //         width: 2px;
-  //         height: 14px;
-  //         background-color: #4faa3d;
-  //       }
-  //     }
-  //   }
+  // span {
+  //   display: block;
+  //   color: #999999;
   // }
 }
+
+// 图标设置
+// .ico {
+//   display: block;
+//   margin-right: 12px;
+//   width: 16px;
+//   height: 16px;
+// }
+
+// :deep(.sub-menu) {
+//   margin-bottom: 18px;
+
+//   &.is-opened {
+//     .el-submenu__title {
+//       color: #ffffff;
+//       background-color: #4faa3d;
+//     }
+//   }
+
+//   li {
+//     width: 148px !important;
+//   }
+
+//   .el-submenu__title {
+//     display: flex;
+//     justify-content: flex-start;
+//     align-items: center;
+//     height: 40px;
+//     border-radius: 5px;
+//     color: #999999;
+//     cursor: pointer;
+//   }
+
+//   .el-submenu__title:hover,
+//   .el-submenu__title.is-active {
+//     color: #ffffff;
+//     background-color: #4faa3d;
+//   }
+
+//   .el-submenu__icon-arrow {
+//     display: none;
+//   }
+
+//   .el-menu-item-group {
+//     .el-menu-item {
+//       width: 148px;
+//       margin-bottom: 5px;
+//       padding: 0;
+//       min-width: 0;
+//       cursor: pointer;
+//     }
+
+//     .sub-item:hover,
+//     .sub-item.is-active {
+//       position: relative;
+//       background-color: #fafafa;
+//       cursor: pointer;
+
+//       span {
+//         color: #4faa3d;
+//       }
+
+//       &::after {
+//         position: absolute;
+//         top: 12px;
+//         left: 172px;
+//         content: '';
+//         display: block;
+//         width: 2px;
+//         height: 14px;
+//         background-color: #4faa3d;
+//       }
+//     }
+//   }
+// }
+// }
 </style>

@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-04-15 18:51:15
+ * @LastEditTime: 2023-04-20 11:13:09
  * @Description: lcl
  */
 const { defineConfig } = require('@vue/cli-service');
@@ -78,6 +78,7 @@ module.exports = defineConfig({
       ],
       alias: {
         '@': resolve('src'),
+        // 使用element报错
         vue: 'vue/dist/vue.esm.js',
       },
     };

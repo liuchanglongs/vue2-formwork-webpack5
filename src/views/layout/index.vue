@@ -3,7 +3,7 @@
  * @Version: 2.0
  * @Date: 2023-03-22 10:03:30
  * @LastEditors: lcl
- * @LastEditTime: 2023-04-18 22:35:01
+ * @LastEditTime: 2023-04-20 14:04:12
  * @Description: lcl
 -->
 <template>
@@ -21,7 +21,7 @@
           <tags></tags>
         </el-header>
         <el-main>
-          <router-view></router-view>
+          <router-view :key="key"></router-view>
         </el-main>
       </el-container>
     </el-container>
@@ -46,7 +46,11 @@ export default {
       isShowOrganization: true,
     };
   },
-  computed: {},
+  computed: {
+    key() {
+      return this.$route.params.id || this.$route.name;
+    },
+  },
   watch: {
     $route: {
       handler(newValue) {},
