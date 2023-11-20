@@ -23,7 +23,7 @@ const RouteView = {
 };
 
 /**
- * Note: sub-menu only appear when route children.length >= 1 && hidden != true 
+ * Note: sub-menu only appear when route children.length >= 1 && hidden != true
  * Detail see: https://panjiachen.github.io/vue-element-admin-site/guide/essentials/router-and-nav.html
  *
  * hidden: true                   if set true, item will not show in the sidebar(default is false)
@@ -49,26 +49,26 @@ const RouteView = {
  */
 
 export const routes = [
-  {
-    path: '/login',
-    hidden: true,
-    name: 'login',
-    component: () =>
-      import(/* webpackChunkName: "login" */ '@/views/login/index.vue'),
-  },
-  // 自定义无感刷新页
-  {
-    path: '/redirect',
-    hidden: true,
-    name: 'redirect',
-    component: LayOut,
-    children: [
-      {
-        path: '/redirect/:path(.*)',
-        component: () => import('@/views/redirect/index.vue'),
-      },
-    ],
-  },
+  // {
+  //   path: '/login',
+  //   hidden: true,
+  //   name: 'login',
+  //   component: () =>
+  //     import(/* webpackChunkName: "login" */ '@/views/login/index.vue'),
+  // },
+  // // 自定义无感刷新页
+  // {
+  //   path: '/redirect',
+  //   hidden: true,
+  //   name: 'redirect',
+  //   component: LayOut,
+  //   children: [
+  //     {
+  //       path: '/redirect/:path(.*)',
+  //       component: () => import('@/views/redirect/index.vue'),
+  //     },
+  //   ],
+  // },
 ];
 
 /**
@@ -77,164 +77,6 @@ export const routes = [
  * admin ->asyncRoutes
  * other -> commonRoutesredict
  */
-export const commonRoutes = {
-  path: '/',
-  name: 'icon',
-  component: LayOut,
-  redirect: '/svg-to-icon',
-  hidden: true,
-  meta: {
-    title: 'icon',
-  },
-  children: [
-    {
-      path: '/svg-to-icon',
-      name: 'svg-to-icon',
-      component: () =>
-        import(
-          /* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'
-        ),
-      meta: {
-        title: 'svg->精灵图->icon',
-        icon: 'el-icon-camera',
-      },
-    },
-  ],
-};
-export const asyncRoutes = {
-  path: '/',
-  name: 'icon',
-  component: LayOut,
-  redirect: '/svg-to-icon',
-  hidden: true,
-  meta: {
-    title: 'icon',
-  },
-  children: [
-    {
-      path: '/svg-to-icon',
-      name: 'svg-to-icon',
-      component: () =>
-        import(
-          /* webpackChunkName: "svg-to-icon" */ '@/views/svgChangeIcon/index.vue'
-        ),
-      meta: {
-        title: 'svg->精灵图->icon',
-        icon: 'el-icon-camera',
-      },
-    },
-
-    {
-      path: '/pictureOptimization',
-      name: 'pictureOptimization',
-      component: () =>
-        import(
-          /* webpackChunkName: "pictureOptimization" */ '@/views/pictureOptimization/index.vue'
-        ),
-      meta: {
-        title: 'pictureOptimization',
-        icon: 'el-icon-camera',
-      },
-    },
-
-    {
-      path: '/longList',
-      name: 'longList',
-      component: () =>
-        import(/* webpackChunkName: "longList" */ '@/views/longList/index.vue'),
-      meta: {
-        title: 'longList',
-        icon: 'el-icon-camera',
-      },
-    },
-
-    {
-      path: '/scrollTableList',
-      name: 'scrollTableList',
-      component: () =>
-        import(
-          /* webpackChunkName: "scrollTableList" */ '@/views/scrollTableList/index.vue'
-        ),
-      meta: {
-        title: 'scrollTableList',
-        icon: 'el-icon-camera',
-      },
-    },
-
-    {
-      path: '/reuseRouter/:id?',
-      name: 'reuse-router',
-      component: () =>
-        import(
-          /* webpackChunkName: "reuseRouter" */ '@/views/reuseRouter/index.vue'
-        ),
-      meta: {
-        title: 'reuseRouter',
-        icon: 'el-icon-camera',
-      },
-    },
-
-    {
-      path: '/recursive',
-      name: 'recursive',
-      component: () =>
-        import(
-          /* webpackChunkName: "recursive" */ '@/views/recursive/index.vue'
-        ),
-      meta: {
-        title: 'recursiveComponent',
-        icon: 'el-icon-camera',
-      },
-      children: [
-        {
-          path: '/recursive/2-1',
-          name: 'recursive-2-1',
-          component: () =>
-            import(
-              /* webpackChunkName: "recursive-2-1" */ '@/views/recursive/two-1.vue'
-            ),
-          meta: {
-            title: 'recursive-two-2-1',
-          },
-        },
-
-        {
-          path: '/recursive/2-2',
-          name: 'recursive-2-2',
-          component: () =>
-            import(
-              /* webpackChunkName: "recursive-2-2" */ '@/views/recursive/two-2.vue'
-            ),
-          meta: {
-            title: 'recursive-2-2',
-          },
-        },
-        {
-          path: '/recursive/2-3',
-          name: 'recursive-2-3',
-          component: RouteView,
-          redirect: '/recursive/3-1',
-          meta: {
-            title: 'recursive-2-3',
-          },
-          children: [
-            {
-              path: '/recursive/3-1',
-              name: 'recursive-3-1',
-              component: () =>
-                import(
-                  /* webpackChunkName: "recursive-3-1" */ '@/views/recursive/three-1.vue'
-                ),
-              meta: {
-                title: 'recursive-3-1',
-              },
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
 
 const router = new VueRouter({
   mode: 'history',

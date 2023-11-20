@@ -3,13 +3,11 @@
  * @Version: 2.0
  * @Date: 2023-03-15 11:01:04
  * @LastEditors: lcl
- * @LastEditTime: 2023-04-20 14:03:46
+ * @LastEditTime: 2023-04-23 22:31:20
  * @Description: lcl
 -->
 <template>
-  <div id="app">
-    <router-view> </router-view>
-  </div>
+  <div id="app"></div>
 </template>
 
 <script>
