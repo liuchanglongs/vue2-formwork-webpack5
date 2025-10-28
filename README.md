@@ -72,3 +72,16 @@ formwork
 └─ yarn.lock
 
 ```
+
+# 功能点
+
+1. 浏览器进度条：路由、axios 中封装
+
+- nprogress 插件
+
+2. 动态路由
+3. 自定义无感刷新页
+4. svg->精灵图->icon（没有转 icon 只有 icon 的一些功能）
+
+- 批量导入 .svg 文件的写法
+- svg -> icon: 可以设置 color、font-size

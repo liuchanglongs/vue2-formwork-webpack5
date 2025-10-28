@@ -28,4 +28,9 @@ export default {};
   font-size: 32px;
   color: red;
 }
+
+.avatar {
+  font-size: 13px;
+  color: rgb(213, 185, 185);
+}
 </style>
