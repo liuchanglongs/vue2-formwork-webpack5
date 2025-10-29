@@ -107,3 +107,6 @@ formwork
 9. 重定向页面：返回 h 函数，利用 replace 跳回原页面
 
 - redirect/index.vue
+
+10. 公共组件
+    ![alt text](./src/assets/image/image.png)
