@@ -24,7 +24,7 @@
       <ul id="preImg-boxs">
         <li id="preImg1" />
         <li id="preImg2" />
-        <li sid="preImg3" />
+        <li id="preImg3" />
       </ul>
     </div>
   </div>

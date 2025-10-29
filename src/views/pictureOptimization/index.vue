@@ -11,7 +11,7 @@
     <div class="item">
       <imageElementuiLazy></imageElementuiLazy>
     </div>
-    <div class="item">
+    <!-- <div class="item">
       <h1>通过new Image()预加载</h1>
       <div
         :class="['no-hover-pre', ismouseenterdiv ? 'hover-pre' : '']"
@@ -21,7 +21,7 @@
         :class="['no-hover-pre', ismouseenterdiv ? 'hover-pre2' : '']"
         @mouseenter="mouseenterdiv"
       ></div>
-    </div>
+    </div> -->
     <div class="item">
       <cssPreLoad></cssPreLoad>
     </div>

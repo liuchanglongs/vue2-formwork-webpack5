@@ -30,6 +30,7 @@ module.exports = {
     'vue/no-mutating-props': 0,
     'vue/multi-word-component-names': 0,
     'no-unused-vars': 0,
+    'vue/no-unused-components': 0,
     // 'no-undef': 0,
     // 'linebreak-style': [0, 'error', 'windows'],
     // 'no-debugger': 0,

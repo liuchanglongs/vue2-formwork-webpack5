@@ -18,7 +18,7 @@
     <p>2. 把要复用的组件封装成一个单独的组件，加上不同属性的key</p>
     <br />
     <br />
-    <p>路由传值：</p>
+    <p>3. 路由传值：</p>
     <ol>
       <li>params（显示传参）： /reuse-router/${id}</li>
       <li>params（隐式传参）： {path:"", params:{id:''}} -->页面刷新会丢失</li>
