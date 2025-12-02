@@ -110,3 +110,4 @@ formwork
 
 10. 公共组件
     ![alt text](./src/assets/image/image.png)
+11. vue 冒泡机制：/label-click-modal-bug

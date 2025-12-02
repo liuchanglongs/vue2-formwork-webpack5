@@ -112,6 +112,18 @@ export const asyncRoutes = {
   },
   children: [
     {
+      path: '/label-click-modal-bug',
+      name: 'label-click-modal-bug',
+      component: () =>
+        import(
+          /* webpackChunkName: "svg-to-icon" */ '@/views/labelClickModalBug/index.vue'
+        ),
+      meta: {
+        title: 'label-click-modal-bug',
+        icon: 'el-icon-camera',
+      },
+    },
+    {
       path: '/svg-to-icon',
       name: 'svg-to-icon',
       component: () =>
